@@ -1,6 +1,6 @@
 # Ballarò meny (uoffisiell)
 
-**https://petrepa.github.io/ballaro-meny/**
+**https://petrepa.com/ballaro-meny/**
 
 Ein mobilvenleg meny for [Ballarò Pizzeria & Rosticceria](https://www.instagram.com/ballaro_pizzeria_rosticceria/),
 Mogata 6E på Sagene i Oslo. Bestill ved å ringe **464 45 516**.
@@ -13,11 +13,11 @@ lettare for folk å finne menyen. Prisane i restauranten gjeld.
 Heile menyen ligg i [`menu.json`](menu.json), open for alle (CORS er ope):
 
 ```
-https://petrepa.github.io/ballaro-meny/menu.json
+https://petrepa.com/ballaro-meny/menu.json
 ```
 
 Formatet og tips til korleis du loggar kva du et står på
-[utviklarsida](https://petrepa.github.io/ballaro-meny/utviklar.html).
+[utviklarsida](https://petrepa.com/ballaro-meny/utviklar.html).
 
 ## Rett feil
 

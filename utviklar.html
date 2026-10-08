@@ -21,12 +21,12 @@
   </div>
 
   <h2>Adressa</h2>
-  <div class="card"><pre style="margin:0;border:0;padding:0">https://petrepa.github.io/ballaro-meny/menu.json</pre></div>
+  <div class="card"><pre style="margin:0;border:0;padding:0">https://petrepa.com/ballaro-meny/menu.json</pre></div>
 
   <h2>Kom i gang</h2>
   <div class="card">
     <b>JavaScript</b>
-<pre>const menu = await fetch("https://petrepa.github.io/ballaro-meny/menu.json")
+<pre>const menu = await fetch("https://petrepa.com/ballaro-meny/menu.json")
   .then(r => r.json());
 
 const pizzaer = menu.categories
@@ -34,10 +34,10 @@ const pizzaer = menu.categories
   .filter(i => i.type === "pizza");</pre>
     <b>Python</b>
 <pre>import json, urllib.request
-url = "https://petrepa.github.io/ballaro-meny/menu.json"
+url = "https://petrepa.com/ballaro-meny/menu.json"
 menu = json.load(urllib.request.urlopen(url))</pre>
     <b>Terminal</b>
-<pre>curl -s https://petrepa.github.io/ballaro-meny/menu.json \
+<pre>curl -s https://petrepa.com/ballaro-meny/menu.json \
   | jq -r '.categories[].items[] | "\(.name): \(.price) kr"'</pre>
   </div>
 
