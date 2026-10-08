@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="nn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#b8321f">
+<title>Ballarò-menyen i din eigen app</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔌</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="wrap">
+  <h1>🔌 Bruk menyen</h1>
+  <p>Hent Ballarò-menyen inn i din eigen app, og logg kva du et</p>
+  <div class="actions"><a href="./">← Tilbake til menyen</a></div>
+</div></header>
+<main>
+  <div class="card note">
+    Heile menyen ligg som éi JSON-fil. Ho er open for alle, krev ingen nøkkel og kan hentast rett frå
+    nettlesaren (CORS er ope). Same uoffisielle forbehald som elles: prisane i restauranten gjeld.
+  </div>
+
+  <h2>Adressa</h2>
+  <div class="card"><pre style="margin:0;border:0;padding:0">https://petrepa.github.io/ballaro-meny/menu.json</pre></div>
+
+  <h2>Kom i gang</h2>
+  <div class="card">
+    <b>JavaScript</b>
+<pre>const menu = await fetch("https://petrepa.github.io/ballaro-meny/menu.json")
+  .then(r => r.json());
+
+const pizzaer = menu.categories
+  .flatMap(c => c.items)
+  .filter(i => i.type === "pizza");</pre>
+    <b>Python</b>
+<pre>import json, urllib.request
+url = "https://petrepa.github.io/ballaro-meny/menu.json"
+menu = json.load(urllib.request.urlopen(url))</pre>
+    <b>Terminal</b>
+<pre>curl -s https://petrepa.github.io/ballaro-meny/menu.json \
+  | jq -r '.categories[].items[] | "\(.name): \(.price) kr"'</pre>
+  </div>
+
+  <h2>Formatet</h2>
+  <div class="card">
+    <table>
+      <tr><th>Felt</th><th>Kva</th></tr>
+      <tr><td><code>schema</code></td><td>Versjon av formatet. Blir auka berre om noko blir endra på ein måte som bryt eksisterande kode.</td></tr>
+      <tr><td><code>updated</code></td><td>Dato menyen sist vart sjekka mot restauranten (<code>YYYY-MM-DD</code>).</td></tr>
+      <tr><td><code>restaurant</code></td><td>Namn, adresse, <code>phone</code> (bruk i <code>tel:</code>-lenker), lenker til kart, Instagram og Wolt.</td></tr>
+      <tr><td><code>allergens</code></td><td>Koder → namn, t.d. <code>"HV": "Hvete/gluten"</code>.</td></tr>
+      <tr><td><code>categories[]</code></td><td><code>id</code>, <code>name</code>, <code>tagline</code>, <code>items[]</code>.</td></tr>
+    </table>
+    <p style="margin-bottom:4px"><b>Kvar rett</b> (<code>items[]</code>):</p>
+    <table>
+      <tr><td><code>id</code></td><td>Stabil ID, t.d. <code>al-tartufo</code>. Endrar seg ikkje om prisen gjer det. <b>Lagre denne når du loggar.</b></td></tr>
+      <tr><td><code>name</code></td><td>Namnet slik det står på menyen.</td></tr>
+      <tr><td><code>description</code></td><td>Ingrediensar (kan vere tom for drikke og ekstra).</td></tr>
+      <tr><td><code>type</code></td><td><code>pizza</code>, <code>stromboli</code>, <code>lasagne</code>, <code>street-food</code>, <code>panuozzo</code>, <code>dessert</code>, <code>drikke</code> eller <code>extra</code>.</td></tr>
+      <tr><td><code>price</code></td><td>Lågaste pris i kroner (heiltal).</td></tr>
+      <tr><td><code>variants</code></td><td>Valfritt. Storleikar eller antal: <code>[{"id":"M","name":"Medium","price":256}, {"id":"L","name":"Stor","price":355}]</code>. Cannoli har <code>1</code>/<code>2</code>/<code>4</code> stk.</td></tr>
+      <tr><td><code>allergens</code></td><td>Liste med koder, <code>[]</code> når menyen seier ingen, eller <code>null</code> når menyen ikkje oppgir det.</td></tr>
+      <tr><td><code>tags</code></td><td>Valfritt: <code>sterk</code>, <code>vegetar</code>, <code>vegansk</code>, <code>favoritt</code>, <code>signatur</code>.</td></tr>
+    </table>
+  </div>
+
+  <h2>Logg kva du et</h2>
+  <div class="card">
+    Prisar og meny endrar seg. Lagre derfor ein <i>kopi</i> av det du bestilte, ikkje berre ein peikar,
+    så stemmer historikken din òg om eitt år:
+<pre>{
+  "date": "2026-10-08",
+  "items": [
+    { "id": "al-tartufo", "name": "Al Tartufo",
+      "variant": "L", "price": 355, "qty": 1,
+      "rating": 5, "who": ["Peter"] },
+    { "id": "tiramisu", "name": "Tiramisu",
+      "price": 99, "qty": 1 }
+  ],
+  "note": "Trøffelen var på topp"
+}</pre>
+    Med <code>id</code> kan du telje opp favorittar, sjå kva du ikkje har prøvd enno
+    (<code>menu.categories[].items[].id</code> minus det du har logga), og rekne ut kor mykje du har brukt.
+    <p style="margin-bottom:0">Hent gjerne fila når appen startar og hald på ein kopi, så verkar appen sjølv om GitHub er nede.</p>
+  </div>
+
+  <h2>Idear</h2>
+  <div class="card">
+    <ul style="margin:0;padding-left:20px">
+      <li>Ein «kva skal vi ha i kveld?»-terning som berre vel pizzaer du ikkje har prøvd.</li>
+      <li>Ei handleliste du ser på medan du ringer inn bestillinga.</li>
+      <li>Home Assistant: ein <code>rest</code>-sensor som hentar menyen, og ein knapp som loggar fredagspizzaen.</li>
+      <li>Allergenfilter for gjestar: skjul alt med <code>N</code> eller <code>M</code>.</li>
+    </ul>
+  </div>
+
+  <h2>Rett feil</h2>
+  <div class="card">
+    Menyen er skriven av for hand frå papirmenyen. Ser du noko som er feil, eller har han endra seg?
+    Opne ein <a href="https://github.com/petrepa/ballaro-meny/issues">issue</a> eller send ein pull request
+    som endrar <code>menu.json</code>.
+  </div>
+  <footer><p><a href="./">← Tilbake til menyen</a></p></footer>
+</main>
+</body>
+</html>

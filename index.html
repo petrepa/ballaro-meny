@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="nn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#b8321f">
+<title>Ballarò meny – pizza på Sagene (uoffisiell)</title>
+<meta name="description" content="Uoffisiell, mobilvenleg meny for Ballarò Pizzeria & Rosticceria i Mogata 6E på Sagene, Oslo. Prisar, allergen og telefonnummer for bestilling.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍕</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="wrap">
+  <h1>Ballarò 🍕</h1>
+  <p>Pizzeria &amp; Rosticceria · Mogata 6E, Sagene</p>
+  <div class="actions" id="actions">
+    <a class="call" href="tel:+4746445516">📞 Ring 464 45 516</a>
+  </div>
+</div></header>
+<main>
+  <div class="card note">
+    <b>💛 Uoffisiell side.</b> Vi har inga tilknyting til Ballarò. Vi elskar berre pizzaen deira, og laga denne sida
+    så det skal vere lettare å finne menyen på mobilen. Bestill ved å ringe restauranten.
+    <div class="muted" id="updated" style="margin-top:6px;font-size:13px"></div>
+  </div>
+  <div id="catnav">
+    <input type="search" id="q" placeholder="Søk: trøffel, nduja, vegetar …" autocomplete="off">
+    <div class="chips scroll-x" id="cats" style="margin-top:8px"></div>
+  </div>
+  <div id="menu"><div class="empty">Lastar meny …</div></div>
+  <div class="card" id="legend" style="margin-top:24px;font-size:14px"></div>
+  <footer>
+    <p><a href="utviklar.html">🔌 Bruk menyen i din eigen app</a></p>
+    <p>Feil i menyen? <a href="https://github.com/petrepa/ballaro-meny/issues">Sei frå på GitHub</a>.</p>
+  </footer>
+</main>
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmtPhone = p => p.replace(/^\+47/, "").replace(/(\d{3})(\d{2})(\d{3})/, "$1 $2 $3");
+let M, filter = "";
+
+function itemHtml(it, cols) {
+  const tags = (it.tags || []).map(t => `<span class="tag ${t === "vegetar" || t === "vegansk" ? "veg" : ""}">${
+    { sterk: "🌶 sterk", vegetar: "🌿 vegetar", vegansk: "🌱 vegansk", favoritt: "👑", signatur: "★ signatur" }[t] || esc(t)}</span>`).join("");
+  let prices;
+  if (cols) prices = `<div class="prices">${it.variants.map(v => `<span>${v.price}</span>`).join("")}</div>`;
+  else if (it.variants) prices = `<div class="prices multi">${it.variants.map(v => `<div>${esc(v.name)}<b>${v.price} kr</b></div>`).join("")}</div>`;
+  else prices = `<div class="prices"><span style="width:auto">${it.price} kr</span></div>`;
+  const all = it.allergens === null ? "Allergen ikkje oppgitt på menyen, spør restauranten"
+    : it.allergens.length ? "Allergen: " + it.allergens.map(a => (M.allergens[a] || a).toLowerCase()).join(", ") : "";
+  return `<div class="item"><div class="main"><div class="name">${esc(it.name)}${tags}</div>
+    ${it.description ? `<div class="desc">${esc(it.description)}</div>` : ""}${all ? `<div class="all">${all}</div>` : ""}</div>${prices}</div>`;
+}
+
+function matches(it) {
+  if (!filter) return true;
+  const hay = [it.name, it.description, ...(it.tags || [])].join(" ").toLowerCase();
+  return filter.split(/\s+/).every(w => hay.includes(w));
+}
+
+function render() {
+  let h = "", any = false;
+  for (const c of M.categories) {
+    const items = c.items.filter(matches);
+    if (!items.length) continue;
+    any = true;
+    // two price columns when every item in the category is M/L sized
+    const cols = items.every(i => i.variants?.length === 2 && i.variants[0].id === "M");
+    const simple = items.every(i => !i.description);
+    h += `<section id="${c.id}"><h2>${esc(c.name)}</h2>${c.tagline ? `<p class="tagline">${esc(c.tagline)}</p>` : ""}
+      ${cols ? `<div class="cols"><span>MEDIUM</span><span>STOR</span></div>` : ""}
+      <div class="card list ${simple ? "simple" : ""}">${items.map(i => itemHtml(i, cols)).join("")}</div></section>`;
+  }
+  $("#menu").innerHTML = any ? h : `<div class="empty">Ingen treff på «${esc(filter)}»</div>`;
+}
+
+fetch("menu.json").then(r => r.json()).then(m => {
+  M = m;
+  const r = m.restaurant;
+  $("#actions").innerHTML = `<a class="call" href="tel:${esc(r.phone)}">📞 Ring ${fmtPhone(r.phone)}</a>
+    <a href="${esc(r.maps)}">📍 Kart</a><a href="${esc(r.instagram)}">📸 Instagram</a>`;
+  const d = new Date(m.updated);
+  $("#updated").textContent = `Meny og prisar sist sjekka ${d.getDate()}.${d.getMonth() + 1}.${d.getFullYear()}. Prisane i restauranten gjeld.`;
+  $("#cats").innerHTML = m.categories.map(c => `<a class="chip" href="#${c.id}">${esc(c.name)}</a>`).join("");
+  $("#legend").innerHTML = `<b>Allergen</b><br>${Object.entries(m.allergens).map(([k, v]) => `${k} = ${v.toLowerCase()}`).join(" · ")}
+    <div class="muted" style="margin-top:6px">Skrive av frå papirmenyen. Er du allergisk: spør restauranten.</div>`;
+  render();
+}).catch(() => { $("#menu").innerHTML = `<div class="empty">Klarte ikkje laste menyen.</div>`; });
+
+$("#q").addEventListener("input", e => { filter = e.target.value.trim().toLowerCase(); render(); });
+</script>
+</body>
+</html>

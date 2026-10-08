@@ -1,0 +1,936 @@
+{
+  "schema": 1,
+  "updated": "2026-10-08",
+  "source": "Skrive av frå papirmenyen i restauranten",
+  "currency": "NOK",
+  "restaurant": {
+    "name": "Ballarò Pizzeria & Rosticceria",
+    "address": "Mogata 6E, 0464 Oslo",
+    "phone": "+4746445516",
+    "instagram": "https://www.instagram.com/ballaro_pizzeria_rosticceria/",
+    "wolt": "https://wolt.com/nb/nor/oslo/restaurant/ballaro-pizzeria-rosticceria",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Ballar%C3%B2+Pizzeria+Mogata+6E+Oslo"
+  },
+  "allergens": {
+    "HV": "Hvete/gluten",
+    "M": "Melk",
+    "N": "Nøtter",
+    "E": "Egg",
+    "F": "Fisk",
+    "SE": "Selleri"
+  },
+  "tags": {
+    "sterk": "Sterk",
+    "vegetar": "Vegetar",
+    "vegansk": "Vegansk",
+    "favoritt": "Husets favoritt",
+    "signatur": "Signaturpizza"
+  },
+  "categories": [
+    {
+      "name": "Le Classiche",
+      "tagline": "Våre klassikere – alltid et trygt valg",
+      "items": [
+        {
+          "id": "pepperoni",
+          "name": "Pepperoni",
+          "description": "Tomatsaus, fior di latte, pepperoni",
+          "type": "pizza",
+          "variants": [
+            {
+              "id": "M",
+              "name": "Medium",
+              "price": 199
+            },
+            {
+              "id": "L",
+              "name": "Stor",
+              "price": 269
+            }
+          ],
+          "price": 199,
+          "allergens": [
+            "HV",
+            "M",
+            "SE"
+          ],
+          "tags": [
+            "sterk"
+          ]
+        },
+        {
+          "id": "parma",
+          "name": "Parma",
+          "description": "Tomatsaus, fior di latte, parmaskinke, cherrytomater, ruccola, Parmigiano Reggiano DOP",
+          "type": "pizza",
+          "variants": [
+            {
+              "id": "M",
+              "name": "Medium",
+              "price": 239
+            },
+            {
+              "id": "L",
+              "name": "Stor",
+              "price": 323
+            }
+          ],
+          "price": 239,
+          "allergens": [
+            "HV",
+            "M"
+          ],
+          "tags": [
+            "favoritt"
+          ]
+        },
+        {
+          "id": "diavola",
+          "name": "Diavola",
+          "description": "Tomatsaus, fior di latte, sterk salami, chili",
+          "type": "pizza",
+          "variants": [
+            {
+              "id": "M",
+              "name": "Medium",
+              "price": 226
+            },
+            {
+              "id": "L",
+              "name": "Stor",
+              "price": 319
+            }
+          ],
+          "price": 226,
+          "allergens": [
+            "HV",
+            "M",
+            "SE"
+          ],
+          "tags": [
+            "sterk"
+          ]
+        },
+        {
+          "id": "capricciosa",
+          "name": "Capricciosa",
+          "description": "Tomatsaus, fior di latte, prosciutto cotto, sopp, krydrede Nocellara del Belice-svarte oliven",
+          "type": "pizza",
+          "variants": [
+            {
+              "id": "M",
+              "name": "Medium",
+              "price": 209
+            },
+            {
+              "id": "L",
+              "name": "Stor",
+              "price": 279
+            }
+          ],
+          "price": 209,
+          "allergens": [
+            "HV",
+            "M"
+          ]
+        },
+        {
+          "id": "margherita",
+          "name": "Margherita",
+          "description": "Tomatsaus, fior di latte, basilikum, olivenolje",
+          "type": "pizza",
+          "variants": [
+            {
+              "id": "M",
+              "name": "Medium",
+              "price": 189
+            },
+            {
+              "id": "L",
+              "name": "Stor",
+              "price": 259
+            }
+          ],
+          "price": 189,
+          "allergens": [
+            "HV",
+            "M"
+          ],
+          "tags": [
+            "vegetar"
+          ]
+        },
+        {
+          "id": "calabrese",
+          "name": "Calabrese",
+          "description": "Tomatsaus, fior di latte, sterk salami, nduja, rødløk",
+          "type": "pizza",
+          "variants": [
+            {
+              "id": "M",
+              "name": "Medium",
+              "price": 226
+            },
+            {
+              "id": "L",
+              "name": "Stor",
+              "price": 318
+            }
+          ],
+          "price": 226,
+          "allergens": [
+            "HV",
+            "M",
+            "SE"
+          ]
+        },
+        {
+          "id": "roma",
+          "name": "Roma",
+          "description": "Tomatsaus, fior di latte, pepperoni, kjøttboller, rødløk, gorgonzola",
+          "type": "pizza",
+          "variants": [
+            {
+              "id": "M",
+              "name": "Medium",
+              "price": 242
+            },
+            {
+              "id": "L",
+              "name": "Stor",
+              "price": 345
+            }
+          ],
+          "price": 242,
+          "allergens": [
+            "HV",
+            "M",
+            "SE"
+          ]
+        }
+      ],
+      "id": "le-classiche"
+    },
+    {
+      "name": "Ballarò Signature",
+      "tagline": "Våre mest populære & unike pizzaer",
+      "items": [
+        {
+          "id": "ballaro-signature",
+          "name": "Ballarò Signature",
+          "description": "Tomatsaus, fior di latte, sterk salami, parmaskinke, gorgonzola, Parmigiano Reggiano DOP, ruccola, chili, trøffelolje",
+          "type": "pizza",
+          "variants": [
+            {
+              "id": "M",
+              "name": "Medium",
+              "price": 262
+            },
+            {
+              "id": "L",
+              "name": "Stor",
+              "price": 369
+            }
+          ],
+          "price": 262,
+          "allergens": [
+            "HV",
+            "M",
+            "SE"
+          ],
+          "tags": [
+            "signatur"
+          ]
+        },
+        {
+          "id": "al-tartufo",
+          "name": "Al Tartufo",
+          "description": "Tomatsaus, fior di latte, trøffelsalami, sjampinjong, ruccola, trøffelolje",
+          "type": "pizza",
+          "variants": [
+            {
+              "id": "M",
+              "name": "Medium",
+              "price": 256
+            },
+            {
+              "id": "L",
+              "name": "Stor",
+              "price": 355
+            }
+          ],
+          "price": 256,
+          "allergens": [
+            "HV",
+            "M",
+            "SE"
+          ]
+        },
+        {
+          "id": "porchetta-e-funghi",
+          "name": "Porchetta e Funghi",
+          "description": "Tomatsaus, fior di latte, porchetta, steinsopp, nduja",
+          "type": "pizza",
+          "variants": [
+            {
+              "id": "M",
+              "name": "Medium",
+              "price": 259
+            },
+            {
+              "id": "L",
+              "name": "Stor",
+              "price": 349
+            }
+          ],
+          "price": 259,
+          "allergens": [
+            "HV",
+            "M"
+          ]
+        },
+        {
+          "id": "san-vito",
+          "name": "San Vito",
+          "description": "Tomatsaus, fior di latte, salsiccia, Parmigiano, trøffelolje",
+          "type": "pizza",
+          "variants": [
+            {
+              "id": "M",
+              "name": "Medium",
+              "price": 259
+            },
+            {
+              "id": "L",
+              "name": "Stor",
+              "price": 360
+            }
+          ],
+          "price": 259,
+          "allergens": [
+            "HV",
+            "M",
+            "SE"
+          ]
+        },
+        {
+          "id": "massimo",
+          "name": "Massimo",
+          "description": "Tomatsaus, fior di latte, marinert biffkjøtt, rødløk, gorgonzola",
+          "type": "pizza",
+          "variants": [
+            {
+              "id": "M",
+              "name": "Medium",
+              "price": 249
+            },
+            {
+              "id": "L",
+              "name": "Stor",
+              "price": 338
+            }
+          ],
+          "price": 249,
+          "allergens": [
+            "HV",
+            "M",
+            "SE"
+          ]
+        },
+        {
+          "id": "sicilian",
+          "name": "Sicilian",
+          "description": "Tomatsaus, fior di latte, aubergine, ansjos, rødløk",
+          "type": "pizza",
+          "variants": [
+            {
+              "id": "M",
+              "name": "Medium",
+              "price": 239
+            },
+            {
+              "id": "L",
+              "name": "Stor",
+              "price": 319
+            }
+          ],
+          "price": 239,
+          "allergens": [
+            "HV",
+            "M",
+            "F",
+            "SE"
+          ]
+        },
+        {
+          "id": "norma-mia",
+          "name": "Norma Mia",
+          "description": "Tomatsaus, fior di latte, aubergine, ricotta",
+          "type": "pizza",
+          "variants": [
+            {
+              "id": "M",
+              "name": "Medium",
+              "price": 229
+            },
+            {
+              "id": "L",
+              "name": "Stor",
+              "price": 307
+            }
+          ],
+          "price": 229,
+          "allergens": [
+            "HV",
+            "M"
+          ],
+          "tags": [
+            "vegetar"
+          ]
+        }
+      ],
+      "id": "ballaro-signature"
+    },
+    {
+      "name": "Pizza Bianca",
+      "tagline": "Hvit pizza – fyldig, kremet & smakrik",
+      "items": [
+        {
+          "id": "quattro-formaggi",
+          "name": "Quattro Formaggi",
+          "description": "Fior di latte, gorgonzola, provolaost, Parmigiano Reggiano DOP",
+          "type": "pizza",
+          "variants": [
+            {
+              "id": "M",
+              "name": "Medium",
+              "price": 229
+            },
+            {
+              "id": "L",
+              "name": "Stor",
+              "price": 299
+            }
+          ],
+          "price": 229,
+          "allergens": null,
+          "tags": [
+            "vegetar"
+          ]
+        },
+        {
+          "id": "cacio-e-pepe-sbagliata",
+          "name": "Cacio e Pepe Sbagliata",
+          "description": "Alfredo-saus, fior di latte, sprøstekt guanciale, krem av Pecorino Romano DOP",
+          "type": "pizza",
+          "variants": [
+            {
+              "id": "M",
+              "name": "Medium",
+              "price": 239
+            },
+            {
+              "id": "L",
+              "name": "Stor",
+              "price": 319
+            }
+          ],
+          "price": 239,
+          "allergens": null
+        },
+        {
+          "id": "nduja-bianca",
+          "name": "N'duja Bianca",
+          "description": "Alfredo-saus, fior di latte, pancetta, Parmigiano Reggiano DOP, nduja",
+          "type": "pizza",
+          "variants": [
+            {
+              "id": "M",
+              "name": "Medium",
+              "price": 229
+            },
+            {
+              "id": "L",
+              "name": "Stor",
+              "price": 309
+            }
+          ],
+          "price": 229,
+          "allergens": null,
+          "tags": [
+            "sterk"
+          ]
+        },
+        {
+          "id": "mondello",
+          "name": "Mondello",
+          "description": "Fior di latte, salsiccia, friarelli, hvitløksolje",
+          "type": "pizza",
+          "variants": [
+            {
+              "id": "M",
+              "name": "Medium",
+              "price": 239
+            },
+            {
+              "id": "L",
+              "name": "Stor",
+              "price": 325
+            }
+          ],
+          "price": 239,
+          "allergens": null
+        },
+        {
+          "id": "catania",
+          "name": "Catania",
+          "description": "Fior di latte, krydrede Nocellara del Belice-svarte oliven, ovnsstekte poteter med timian, porchetta, provola",
+          "type": "pizza",
+          "variants": [
+            {
+              "id": "M",
+              "name": "Medium",
+              "price": 249
+            },
+            {
+              "id": "L",
+              "name": "Stor",
+              "price": 370
+            }
+          ],
+          "price": 249,
+          "allergens": null
+        },
+        {
+          "id": "pollo-bianca",
+          "name": "Pollo Bianca",
+          "description": "Alfredo-saus, fior di latte, marinert kylling, gorgonzola, Parmigiano Reggiano DOP, spinat, rødløk, hvitløksolje, cherrytomater fra solrike Sicilia",
+          "type": "pizza",
+          "variants": [
+            {
+              "id": "M",
+              "name": "Medium",
+              "price": 239
+            },
+            {
+              "id": "L",
+              "name": "Stor",
+              "price": 319
+            }
+          ],
+          "price": 239,
+          "allergens": null
+        }
+      ],
+      "id": "pizza-bianca"
+    },
+    {
+      "name": "Verde",
+      "tagline": "Friskere valg – grønt & godt",
+      "items": [
+        {
+          "id": "gino",
+          "name": "Gino",
+          "description": "Tomatsaus, røkt provolaost, soltørkede tomater, aubergine, krydrede Nocellara del Belice-svarte oliven, Parmigiano Reggiano DOP",
+          "type": "pizza",
+          "variants": [
+            {
+              "id": "M",
+              "name": "Medium",
+              "price": 219
+            },
+            {
+              "id": "L",
+              "name": "Stor",
+              "price": 289
+            }
+          ],
+          "price": 219,
+          "allergens": null,
+          "tags": [
+            "vegetar"
+          ]
+        },
+        {
+          "id": "via-genova",
+          "name": "Via Genova",
+          "description": "Fior di latte, pesto genovese, Parmigiano Reggiano DOP",
+          "type": "pizza",
+          "variants": [
+            {
+              "id": "M",
+              "name": "Medium",
+              "price": 196
+            },
+            {
+              "id": "L",
+              "name": "Stor",
+              "price": 269
+            }
+          ],
+          "price": 196,
+          "allergens": [
+            "HV",
+            "M"
+          ],
+          "tags": [
+            "vegetar"
+          ]
+        }
+      ],
+      "id": "verde"
+    },
+    {
+      "name": "Vegano",
+      "tagline": "100% vegansk – fyldig & smakrik",
+      "items": [
+        {
+          "id": "margherita-vegana",
+          "name": "Margherita Vegana",
+          "description": "Vegansk mozzarella, aubergine, aromasopp, cherrytomater, hvitløksolje",
+          "type": "pizza",
+          "variants": [
+            {
+              "id": "M",
+              "name": "Medium",
+              "price": 219
+            },
+            {
+              "id": "L",
+              "name": "Stor",
+              "price": 289
+            }
+          ],
+          "price": 219,
+          "allergens": [
+            "HV"
+          ],
+          "tags": [
+            "vegansk"
+          ]
+        }
+      ],
+      "id": "vegano"
+    },
+    {
+      "name": "Ripieno / Stromboli",
+      "tagline": "Perfekt å dele – eller som tilbehør",
+      "items": [
+        {
+          "id": "stromboli",
+          "name": "Stromboli",
+          "description": "Fior di latte, pepperoni, porchetta, toppet med hvitløksmør",
+          "type": "stromboli",
+          "price": 239,
+          "allergens": [
+            "HV",
+            "M"
+          ]
+        }
+      ],
+      "id": "ripieno-stromboli"
+    },
+    {
+      "name": "Dagens spesial",
+      "tagline": "",
+      "items": [
+        {
+          "id": "beef-ragu-lasagne",
+          "name": "Beef Ragù Lasagne",
+          "description": "Klassisk italiensk lasagne med langtidskokt okseragù, tomatsaus, béchamelsaus, fior di latte, Parmigiano, fersk pasta, gulrot, selleri, løk, olivenolje",
+          "type": "lasagne",
+          "price": 189,
+          "allergens": [
+            "HV",
+            "M",
+            "SE"
+          ]
+        }
+      ],
+      "id": "dagens-spesial"
+    },
+    {
+      "name": "Sicilian Street Food",
+      "tagline": "Arancini & fritti siciliani",
+      "items": [
+        {
+          "id": "arancini-ragu",
+          "name": "Arancini Ragù",
+          "description": "Sprø fritterte risottoboller fylt med okseragù, bio tomatsaus, mozzarella, grønne erter, Parmigiano Reggiano DOP, løk, olivenolje",
+          "type": "street-food",
+          "price": 79,
+          "allergens": [
+            "HV",
+            "M",
+            "E",
+            "SE"
+          ]
+        },
+        {
+          "id": "arancini-nduja",
+          "name": "Arancini Nduja",
+          "description": "Sprø fritterte risottoboller fylt med béchamelsaus, prosciutto cotto, scamorzaost og nduja",
+          "type": "street-food",
+          "price": 79,
+          "allergens": [
+            "HV",
+            "M",
+            "E"
+          ]
+        },
+        {
+          "id": "carbonara-fritta",
+          "name": "Carbonara Fritta",
+          "description": "Sprø frittert spaghetti carbonara med guanciale, Pecorino Romano DOP, Parmigiano Reggiano DOP og sort pepper",
+          "type": "street-food",
+          "price": 79,
+          "allergens": [
+            "HV",
+            "M",
+            "E"
+          ]
+        }
+      ],
+      "id": "sicilian-street-food"
+    },
+    {
+      "name": "Panuozzo",
+      "tagline": "",
+      "items": [
+        {
+          "id": "panuozzo-parma",
+          "name": "Panuozzo Parma",
+          "description": "Mozzarella, parmaskinke, ruccola, cherrytomater, Parmigiano Reggiano DOP, pesto, extra virgin olivenolje og balsamico",
+          "type": "panuozzo",
+          "price": 169,
+          "allergens": [
+            "HV",
+            "M"
+          ]
+        },
+        {
+          "id": "panuozzo-picante",
+          "name": "Panuozzo Picante",
+          "description": "Mozzarella, parmaskinke, salame piccante, Parmigiano Reggiano DOP og extra virgin olivenolje",
+          "type": "panuozzo",
+          "price": 179,
+          "allergens": [
+            "HV",
+            "M"
+          ]
+        },
+        {
+          "id": "panuozzo-siciliano",
+          "name": "Panuozzo Siciliano",
+          "description": "Mortadella, pistachio krem, burrata, pesto, Parmigiano Reggiano DOP og extra virgin olivenolje",
+          "type": "panuozzo",
+          "price": 189,
+          "allergens": [
+            "HV",
+            "M",
+            "N"
+          ]
+        }
+      ],
+      "id": "panuozzo"
+    },
+    {
+      "name": "Desserter",
+      "tagline": "",
+      "items": [
+        {
+          "id": "tiramisu",
+          "name": "Tiramisu",
+          "description": "Klassisk italiensk tiramisu",
+          "type": "dessert",
+          "price": 99,
+          "allergens": [
+            "HV",
+            "M",
+            "E"
+          ]
+        },
+        {
+          "id": "cannoli-siciliani",
+          "name": "Cannoli Siciliani",
+          "description": "Sprø sicilianske cannoli fylt med søt ricottakrem",
+          "type": "dessert",
+          "price": 72,
+          "variants": [
+            {
+              "id": "1",
+              "name": "1 stk",
+              "price": 72
+            },
+            {
+              "id": "2",
+              "name": "2 stk",
+              "price": 129
+            },
+            {
+              "id": "4",
+              "name": "4 stk",
+              "price": 239
+            }
+          ],
+          "allergens": [
+            "HV",
+            "M"
+          ]
+        }
+      ],
+      "id": "desserter"
+    },
+    {
+      "name": "Drikke",
+      "tagline": "",
+      "items": [
+        {
+          "id": "coca-cola-0-33",
+          "name": "Coca-Cola 0,33",
+          "description": "",
+          "type": "drikke",
+          "price": 55,
+          "allergens": []
+        },
+        {
+          "id": "coca-cola-zero-0-33",
+          "name": "Coca-Cola Zero 0,33",
+          "description": "",
+          "type": "drikke",
+          "price": 55,
+          "allergens": []
+        },
+        {
+          "id": "fanta-0-33",
+          "name": "Fanta 0,33",
+          "description": "",
+          "type": "drikke",
+          "price": 55,
+          "allergens": []
+        },
+        {
+          "id": "eplemost-0-33",
+          "name": "Eplemost 0,33",
+          "description": "",
+          "type": "drikke",
+          "price": 55,
+          "allergens": []
+        },
+        {
+          "id": "san-pellegrino-0-5-l",
+          "name": "San Pellegrino 0,5 l",
+          "description": "",
+          "type": "drikke",
+          "price": 69,
+          "allergens": []
+        }
+      ],
+      "id": "drikke"
+    },
+    {
+      "name": "Extra",
+      "tagline": "Tilbehør og ekstra på pizzaen",
+      "items": [
+        {
+          "id": "extra-rommedressing",
+          "name": "Rømmedressing",
+          "description": "",
+          "type": "extra",
+          "price": 25,
+          "allergens": [
+            "M",
+            "SE"
+          ]
+        },
+        {
+          "id": "extra-hvitloksdressing",
+          "name": "Hvitløksdressing",
+          "description": "",
+          "type": "extra",
+          "price": 25,
+          "allergens": [
+            "M",
+            "SE"
+          ]
+        },
+        {
+          "id": "extra-chiliolje",
+          "name": "Chiliolje",
+          "description": "",
+          "type": "extra",
+          "price": 25,
+          "allergens": []
+        },
+        {
+          "id": "extra-chilidressing",
+          "name": "Chilidressing",
+          "description": "",
+          "type": "extra",
+          "price": 35,
+          "allergens": [
+            "M",
+            "SE"
+          ]
+        },
+        {
+          "id": "extra-glutenfri-bunn",
+          "name": "Glutenfri bunn",
+          "description": "",
+          "type": "extra",
+          "price": 50,
+          "allergens": []
+        },
+        {
+          "id": "extra-parmigiano-reggiano-dop",
+          "name": "Parmigiano Reggiano DOP",
+          "description": "",
+          "type": "extra",
+          "price": 35,
+          "allergens": [
+            "M"
+          ]
+        },
+        {
+          "id": "extra-bio-tomatsaus",
+          "name": "Bio tomatsaus",
+          "description": "",
+          "type": "extra",
+          "price": 25,
+          "allergens": []
+        },
+        {
+          "id": "extra-krydrede-nocellara-del-belice-svarte-oliven",
+          "name": "Krydrede Nocellara del Belice-svarte oliven",
+          "description": "",
+          "type": "extra",
+          "price": 25,
+          "allergens": []
+        },
+        {
+          "id": "extra-troffelmayo",
+          "name": "Trøffelmayo",
+          "description": "",
+          "type": "extra",
+          "price": 35,
+          "allergens": [
+            "E",
+            "SE"
+          ]
+        },
+        {
+          "id": "extra-pesto-genovese",
+          "name": "Pesto Genovese",
+          "description": "",
+          "type": "extra",
+          "price": 35,
+          "allergens": [
+            "N",
+            "M"
+          ]
+        }
+      ],
+      "id": "extra"
+    }
+  ]
+}
